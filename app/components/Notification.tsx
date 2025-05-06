@@ -33,7 +33,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
       {notification && (
         <div className="toast toast-bottom toast-end z-[100]">
           <div className={`alert ${getAlertClass(notification.type)}`}>
-            <span>{notification.message}</span>
+            <span className="text-white">{notification.message}</span>
           </div>
         </div>
       )}
