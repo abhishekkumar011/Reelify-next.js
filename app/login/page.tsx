@@ -44,7 +44,7 @@ export default function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded"
+            className="w-full input"
             placeholder="enter your email"
           />
         </div>
@@ -59,7 +59,7 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded"
+            className="w-full input"
             placeholder="enter your password"
           />
         </div>
