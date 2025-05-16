@@ -19,7 +19,7 @@ export default function Header() {
   };
 
   return (
-    <div className="navbar sticky top-0 z-40 border border-gray-300 border-b rounded-lg">
+    <div className="navbar sticky top-0 z-40 border border-gray-300 border-b rounded-lg backdrop-blur-sm">
       <div className="flex container mx-auto">
         <div className="flex-1 px-2 lg:flex-none">
           <Link
@@ -46,7 +46,7 @@ export default function Header() {
 
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] shadow-md rounded-box w-68 mt-4 py-2 border border-gray-200"
+                className="dropdown-content z-[1] shadow-md rounded-box w-68 mt-4 py-2 bg-gray-300"
               >
                 {session ? (
                   <>
