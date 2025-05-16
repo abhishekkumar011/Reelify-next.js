@@ -10,7 +10,7 @@ import { useNotification } from "@/app/components/Notification";
 
 export default function VideoPage() {
   const params = useParams();
-  const videoId = params?.id as string | undefined;
+  const videoId = params?.id as string;
   const { showNotification } = useNotification();
 
   const [video, setVideo] = useState<IVideo | null>(null);
