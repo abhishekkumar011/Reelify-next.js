@@ -5,9 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 // This is how to extract `params` in App Router API routes
 export async function GET(
   req: NextRequest,
-  context : { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
-  const { id } = context.params;
+  const { id } = await context.params;
 
   if (!id) {
     return NextResponse.json({ error: "Id not found" }, { status: 400 });
