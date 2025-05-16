@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { Home, User } from "lucide-react";
 import { useNotification } from "./Notification";
@@ -14,6 +13,7 @@ export default function Header() {
       await signOut();
       showNotification("Signed out successfully", "success");
     } catch (error) {
+      console.error(error);
       showNotification("Failed to sign out", "error");
     }
   };

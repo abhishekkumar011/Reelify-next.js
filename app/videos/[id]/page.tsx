@@ -1,16 +1,16 @@
 "use client";
-import { useNotification } from "@/app/components/Notification";
-import { apiClient } from "@/lib/api-client";
-import { IVideo } from "@/models/Video.model";
-import { IKVideo } from "imagekitio-next";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { IKVideo } from "imagekitio-next";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { apiClient } from "@/lib/api-client";
+import { IVideo } from "@/models/Video.model";
+import { useNotification } from "@/app/components/Notification";
 
 export default function VideoPage() {
   const params = useParams();
-  const videoId = params?.id as string;
+  const videoId = params?.id as string | undefined;
   const { showNotification } = useNotification();
 
   const [video, setVideo] = useState<IVideo | null>(null);
@@ -32,13 +32,13 @@ export default function VideoPage() {
       }
     };
     fetchAVideo();
-  }, [videoId]);
+  }, [videoId, showNotification]);
 
   return (
     <div>
       <div className="hidden lg:flex px-4 mb-2">
         <Link href={"/"}>
-          <ArrowLeft className="size-8"/>
+          <ArrowLeft className="size-8" />
         </Link>
       </div>
       {video ? (
